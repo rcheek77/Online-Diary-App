@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    const script = document.createElement("script");
+    script.src="script-index.js";
+    document.head.prepend(script);
+
     const addBtn = document.getElementById('save-entry-btn');           // new constant for data gathering from the Save Entry button
     const textInput = document.getElementById('new-entry-text');        // new constant for data gathered from the new journal entry text
     const headingInput = document.getElementById('title-data');         // new constant for data gathered from the heading input box
@@ -16,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         localStorage.setItem('jnlString', JSON.stringify(data));             // save 'data' array to local Storage, with key data 'jnlString'
     }
+
+    window.addEventListener("storage", (ev) => {
+        console.log(ev);
+    })
 
     function loadEntry() {                                                   // new function to load data from local storage 
         const data = JSON.parse(localStorage.getItem('jnlString') || '[]');  // get data from key data from local storage and assign to 'data' array
@@ -101,8 +110,32 @@ document.addEventListener('DOMContentLoaded', () => {
         textInput.value = "";                       // reset text value to nothing
         headingInput.value = "";                    // reset heading value to nothing
         saveEntry();                                // call seveEntry function  
+        createCard();
+    });
+
+        addBtn.addEventListener('keydown', function(event) {                    // same as above, but event listener is for hitting enter key on Save Entry button
+            if(event.keydown==='Enter') {
+
+            const heading = headingInput.value;                                
+            if (!text) return alert("Please add a journal entry");              
+
+            if(jnlCard) {                                                       
+                jnlCard.querySelector('.jnl-text').textContent = text;          
+                jnlCard.querySelector('.jnl-heading').textContent = heading;   
+                jnlCard = null;                                               
+                addBtn.textContent = "Save Entry";                             
+            } else {                                                            
+                const newCard = createCard(text, heading);                      
+                entriesContainer.appendChild(newCard);                          
+            }
+
+            textInput.value = "";                       // reset text value to nothing
+            headingInput.value = "";                    // reset heading value to nothing
+            saveEntry();  
+            createCard();    
+        }                         
     });
 
     loadEntry();                // run loadEntry function
-
+    
 });
