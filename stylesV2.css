@@ -13,9 +13,11 @@
     --transition: all 0.3s ease;
 }
 
-.imprima-regular {
-  font-family: "Imprima", sans-serif;
-  font-weight: 400;
+
+.josefin-sans-1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
   font-style: normal;
 }
 
@@ -23,7 +25,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Imprima";
+    font-family: "Josefin Sans";
     color: grey;
 }
 
@@ -51,8 +53,12 @@ header {
     margin-bottom: 30px;
 }
 
+.nav-bar {
+    display: flex;
+}
+
 .nav-headings {
-    position: fixed;
+    position:absolute;
     left: 0;
     top: 75;
     height: 50px;
@@ -73,7 +79,7 @@ header {
 }
 
 .nav-headings a {
-    font-family: "Imprima";
+    font-family: "Josefin Sans";
     text-decoration: none;
     color: whitesmoke;
     font-weight: 700;
@@ -154,7 +160,7 @@ header {
     padding: 5px;
     overflow-y: auto;
     width: 200px;
-    font-family: "Imprima";
+    font-family: "Josefin Sans";
     text-align: center;
 }
 
@@ -178,6 +184,10 @@ header {
     margin-right: 100px;
 }
 
+.index-heading h1 {
+    font-weight: 2000;
+}
+
 .main-container {
     padding: 30px;
     flex-direction: column;
@@ -187,54 +197,70 @@ header {
     margin-right: 100px;
 }
 
-.top-two {
+.home-list {
+    display: flex;
+    height: 200px;
+
+}
+
+.home-list h1 {
+    font-weight: bolder;
+}
+
+.home-list2 {
     display: flex;
 }
 
-.first-entry {
+.home-item {
     background-color: rgb(252, 228, 252);
     border-radius: 15px;
     box-shadow: var(--shadow);
-    padding: 30px;
+    padding: 15px;
     margin: 10px;
-    height: 200px;
-    width: 65%
-    
+    width: auto;
+    text-align: left;
 }
 
-.second-entry {
+.home-item0 { 
     background-color: rgb(252, 228, 252);
     border-radius: 15px;
     box-shadow: var(--shadow);
-    padding: 30px;
+    padding: 15px;
     margin: 10px;
-    height: 200px;
-    width: 35%
+    width: 70%;
+    text-align: left;
+    size: 1.5rem;
 }
 
-.bottom-two {
-    display: flex;
+.home-item0 .journal-preview {
+    font-size: 36px;
+    font-weight:800;
 }
 
-.third-entry {
+.home-item0 .journal-content {
+    font-size: 26px;
+}
+
+.home-item1 { 
     background-color: rgb(252, 228, 252);
     border-radius: 15px;
     box-shadow: var(--shadow);
-    padding: 30px;
+    padding: 15px;
     margin: 10px;
-    height: 200px;
-    width: 35%;
+    width: 30%;
+    text-align: left;
 }
 
-.fourth-entry {
+.home-item2, .home-item3, .home-item4 { 
     background-color: rgb(252, 228, 252);
     border-radius: 15px;
     box-shadow: var(--shadow);
-    padding: 30px;
+    padding: 15px;
     margin: 10px;
-    height: 200px;
-    width: 65%;
+    width: 33%;
+    text-align: left;
 }
+
 
 .lowest-box {
     background-color: rgb(252, 228, 252);
@@ -264,7 +290,6 @@ header {
     box-shadow: var(--shadow);
     padding: 15px;
     margin: 10px;
-    max-height: 180px;
     width: auto;
     text-align: left;
 }
@@ -304,7 +329,7 @@ header {
 }
 
 .journal-preview {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 500;
     white-space: nowrap;
     overflow: hidden;
@@ -362,7 +387,8 @@ header {
     border: none;
     resize: none;
     padding: 10px 0;
-    min-height: 300px;
+    max-height: 100px;
+    margin-bottom: 15px;
 }
 
 .journal-content:focus {
@@ -399,7 +425,7 @@ header {
 /* footer styles */
 
 footer {
-    position: absolute;
+    position: flow;
     margin-bottom: 4px;
     bottom: 0;
     width: 95%;
