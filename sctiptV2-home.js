@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
      
-    // Render the journal list to the vault page
+    // Render the journal list to the home page
     function renderJnlsHome() {          
         homeList.innerHTML = '';                 // set textarea where journals are displayed to ''
         
