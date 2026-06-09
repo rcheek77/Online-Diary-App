@@ -1,17 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
         // DOM Elements
-    const journalList = document.getElementById('journalList');
+
     const vaultList = document.getElementById('vaultList');
-    const emptyState = document.getElementById('emptyState');
-    const journalEditor = document.getElementById('journalEditor');
-    const newEntryBtn = document.getElementById('newEntryBtn');
-    const saveBtn = document.getElementById('saveBtn');
-    const deleteBtn = document.getElementById('deleteBtn');
-    const journalTitle = document.getElementById('journalTitle');
-    const journalContent = document.getElementById('journalContent');
-    const journalDate = document.getElementById('journalDate');
-    const journalTime = document.getElementById('journalTime');
-    const moodButtons = document.querySelectorAll('.mood-btn');
     const storageKey = "journals"
 
         // Sample journal entries

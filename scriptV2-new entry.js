@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
         // DOM Elements
     const journalList = document.getElementById('journalList');
-    const vaultList = document.getElementById('vaultItem');
     const emptyState = document.getElementById('emptyState');
     const journalEditor = document.getElementById('journalEditor');
     const newEntryBtn = document.getElementById('newEntryBtn');
